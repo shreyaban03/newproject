@@ -25,10 +25,8 @@ class MyApp extends StatelessWidget {
               // Increase the font size
             ),
           ),
-          child:Text(
-            "Hello, App developers!"),
-        ),
-      ),
-    );
-  }
+          
+     ),
+  ));
+  }
 }
