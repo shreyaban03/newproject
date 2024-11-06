@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/common/color_extension.dart';
+import 'package:flutter_application_1/view/splash_view.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main(){
   runApp(const MyApp());
 }
 
@@ -9,24 +12,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      title: "Music Player",
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("KRS Day 1"),
-          backgroundColor: Colors.red,
-        ),
-        body: const Center(
-          child: Text(
-            "Hello, App developers!",
-            style: TextStyle(
-              fontSize: 50.0, 
-              
-              // Increase the font size
-            ),
+        theme :ThemeData(
+          fontFamily: "Circular Std",
+          scaffoldBackgroundColor: TColor.bg,
+          textTheme: Theme.of(context).textTheme.apply(
+            bodyColor: TColor.primaryText,
+            displayColor: TColor.primaryText,
           ),
-          
-     ),
-  ));
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: TColor.primary,
+        ) ,
+        useMaterial3: false,
+          ),
+          home:const SplashView(),
+    );
   }
 }
