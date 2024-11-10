@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/commom_widget/icon_text_row.dart';
 import 'package:flutter_application_1/common/color_extension.dart';
+import 'package:flutter_application_1/view/device_storage/home_page.dart';
 import 'package:flutter_application_1/view/home/home_view.dart';
 import 'package:flutter_application_1/view/settings/settings_view.dart';
 import 'package:flutter_application_1/view/songs/songs_view.dart';
@@ -23,7 +24,7 @@ class  _MainTabViewState extends State <MainTabView> with SingleTickerProviderSt
   void initState() {
     // TODO: implement initState
       super.initState();
-      controller =TabController(length: 3, vsync: this);
+      controller =TabController(length: 4, vsync: this);
 
       controller?.addListener(() {
         selectTab = controller?.index??0;
@@ -66,7 +67,7 @@ class  _MainTabViewState extends State <MainTabView> with SingleTickerProviderSt
               color:TColor.primaryText.withOpacity(0.03),
             ),
               child: Column(children: [
-              Image.asset("assets/images/Music player icon.jpeg",width: media.width*0.17,),
+              Image.asset("assets/images/music.png",width: media.width*0.17,),
               SizedBox(height: 20,),
                      const  Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -129,15 +130,17 @@ class  _MainTabViewState extends State <MainTabView> with SingleTickerProviderSt
         
         
          
-      body: TabBarView(controller: controller,children:const  [
+      body: TabBarView(controller: controller,children:[
 
       
-        HomeView(),
+        const HomeView(),
         
         
-    SongView(),
+    const SongView(),
         
- SettingsView(),
+ const SettingsView(),
+
+   HomePage(),
       ],),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: TColor.bg,boxShadow: const[
@@ -172,6 +175,10 @@ class  _MainTabViewState extends State <MainTabView> with SingleTickerProviderSt
          icon: Image.asset(selectTab==2?"assets/images/setting.png":"assets/images/setting.png",
          width: 20,height: 20,color: Colors.white
          
+         ),),
+          Tab(text: "Local Music",
+         icon: Image.asset(selectTab==3?"assets/images/storage-device.png":"assets/images/storage-device.png",
+         width: 20,height: 20,color: Colors.white,
          ),),
         ]),),
       ),

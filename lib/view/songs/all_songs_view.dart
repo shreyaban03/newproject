@@ -13,6 +13,11 @@ class AllSongsView extends StatefulWidget {
 
 class _AllSongsViewState extends State<AllSongsView > {
 
+List<String> songUrls = [
+  "https://www.drivehq.com/file/df.aspx/shareID46394/fileID873126/005 Michael Jackson - Billie Jean.mp3",
+  "https://show2babi.com/downloading/11662/Michael-Jackson-Smooth-Criminal#google_vignette",
+  "https://soundcloud.com/gotye/3-somebody-that-i-used-to-know?in=csm-o/sets/sad&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+];
   final allVM=Get.put(AllSongsViewModel());
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class _AllSongsViewState extends State<AllSongsView > {
 
         return AllSongRow (sObj: sObj,onPressed: () {} ,onPressedPlay: () {
 
-          Get.to(() => const MainPlayerView());
+          Get.to(() => MainPlayerView(songUrl: songUrls[index],));
         },);
   })),
     );

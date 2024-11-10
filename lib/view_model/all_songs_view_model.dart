@@ -11,6 +11,7 @@ class AllSongsViewModel extends GetxController{
       "image":"assets/images/Bebe Rexha.jpeg",
       "name":"Be The Girl",
       "artists":"Bebe Rexha"
+      
     },
     {
       "image":"assets/images/21 Country Artists to Watch in 2021 - Country Evolution.jpeg",
